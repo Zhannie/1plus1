@@ -1,0 +1,198 @@
+.iconMobMenu, .mobMenu {
+	display: none;
+}
+
+.left {
+	display: inline-block;
+	width: 5.5%;
+	max-width: 50px;
+	vertical-align: top;
+}
+
+header {
+	display: block;
+	position: fixed;
+	right: 0;
+	left: 0;
+	width: 100%;
+	max-width: 1400px;
+	font-size: .75em;
+	z-index:3;
+	transition: all .4s ease-in-out;
+	nav{
+		display: inline-block;
+		width: 95.5%;
+		padding-left: 1%;
+		li{
+			display: block;
+			position:relative;
+			float:left;
+			padding: 10px;
+			color: white;
+			&.right {
+				float: right;
+			}
+			&:nth-child(1) {
+				padding-right: 40px;
+			}
+			&:nth-child(2) {
+				padding: 10px 35px 10px 70px;
+			}
+			&:nth-child(3), &:nth-child(4) {
+				padding: 15px 15px 10px;
+				font-size: 1.17em;
+			}
+			&:not(:nth-child(3)):after {
+				content: url(../images/header/vert.png);
+				position: absolute;
+				right: -7px;
+				top: 5px;
+				padding: 0px 5px;
+			}
+			&:nth-child(5):after {
+				display: none;
+			}
+		}
+		#euro:before {
+			content: url(../images/header/up.png);
+			padding-right: 5px;
+		}
+		#dollar:before {
+			content: url(../images/header/down.png);
+			padding-right: 5px;
+		}
+	}	
+		.search:before {
+			content: url(../images/header/search.png);
+			cursor: pointer;
+		}
+		.share:before {
+			content: url(../images/header/share.png);
+			cursor: pointer;
+		}
+		#searchFull {
+			display: none;
+			float: right;
+			width: 350px;
+			height: 35px;
+			margin-top: 7px;
+			padding: 5px 10px 5px 40px;
+			border-radius: 10px;
+			border: none;
+			background-color: white;
+			background-image: url('../images/header/searchImg.png');
+			background-position: 10px 5px;
+			background-repeat: no-repeat;
+			transition: all .4s ease-in-out;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+.simple {
+	height: 70px;
+	background: black;
+	background: -webkit-linear-gradient(bottom, transparent, black 70%);
+	background: -o-linear-gradient(top, transparent, black 70%);
+	background: -moz-linear-gradient(top, transparent, black 70%);
+	background: linear-gradient(to top, transparent, black 70%);
+}
+
+.colored {
+	background-color: black;
+	height: 50px;
+}
+
+$weatherbg: url(../images/header/rain.png);
+
+.weather {
+	position: relative;
+	width: 170px;
+	word-wrap: break-word;
+	text-align: justify;
+}
+.weather:before {
+	content: $weatherbg;
+	position: absolute;
+	left: 20px;
+	padding: 0px;
+}
+
+.sharePaw {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	visibility: visible;
+	z-index: 700;
+	background-color: rgba(0,0,0,.95);
+	transition: 1s all;
+	.box {
+		position: relative;
+		width: 640px;
+		height: 477px;
+		margin: 50px auto 0px;
+		background-color: white;
+		#closePaw {
+			content: $quitBtn;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+		}
+		img {
+			height: 310px;
+			width: 100%;
+		}
+		h3 {
+			font-size: 1.125em;
+			padding: 25px 0px 10px 32px;
+		}
+		p {
+			font-size: .875em;
+			padding: 0px 0px 10px 32px;
+			span {
+				display: block;
+				padding-top: 15px;
+				color: $bgmenu;
+			}
+		}
+		.buts{
+			display: block;
+			width: 100%;
+			padding-left: 32px;
+			border-top: 1px solid $bgmenu;
+			div{
+				display: inline-block;
+				height: 100%;
+				padding: 5px 15px;
+				cursor: pointer;
+				vertical-align: center;
+			}
+			.vk {
+				@include logo('vk.png', 'vkHover.png');
+			}
+			.fb {
+				@include logo('fb.png', 'fbHover.png');
+			}
+			.tw {
+				@include logo('tw.png', 'twHover.png');
+			}
+			.ok {
+				@include logo('ok.png', 'okHover.png');
+			}
+			.g {
+				@include logo('g.png', 'gHover.png');
+			}
+		}
+	}
+}
+
+.shareClose {
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+}
+
+

@@ -1,0 +1,169 @@
+.menu {
+	display: block;
+	width: 100%;
+	height: 46px;
+	padding: 0px 380px 0px 50px;
+	margin: -20px 0px 25px;
+	background-color: $bgmenu;
+	border: 1px solid $bgmenu;
+	z-index: -1;
+	transition: all .4s ease-in-out;
+	.left {
+		display: none;
+	}
+	ul {
+		height: 46px;
+		white-space: nowrap;
+		vertical-align: middle;
+		li {
+			display: inline-block;
+			padding: 14px .5%;
+			vertical-align: center;
+			cursor: pointer;
+			text-align: center;	
+			&:hover {
+				color: white;
+			}
+		}
+		#all {
+			width: 130px;
+			color: $fontColor;
+				&:before {
+					content: url(../images/menu/all.png);
+					padding-right: 8px;
+				}
+		}
+		
+		.dropdown {
+			position: relative;
+			&:hover .dcontent{
+				display: block;
+			}
+		}
+		.dcontent {
+			display: none;
+			position: absolute;
+			top: 43px;
+			left: 0;
+			width: 130px;
+			padding: 10px 0;
+			background-color: $bgmenu;
+			box-shadow: 0 7px 10px rgba(0,0,0,.5);
+			z-index: 1;
+			a {
+				display: block;
+				padding: 5px 15px;
+				text-decoration: none;
+				text-align: left;
+				color: $fontColor; 
+				&:hover {
+					background-color: $allColor;
+					color: white;
+				}
+				li {
+					width: 100%;
+					height: 100%;
+					padding: 0px;
+					font-size: 100%;
+					text-align: left;
+				}
+			}
+		}
+		.searchSec {
+			display: none;
+			width: 50px;
+			padding: 20px 10px;
+			background: url('../images/header/searchImg.png') no-repeat center center;
+			cursor: pointer;
+		}
+		.shareSec {
+			display: none;
+			background: url('../images/header/shareImg.png') no-repeat center center;
+			width: 50px;
+			padding: 20px 10px;
+			cursor: pointer;
+		}
+		.right {
+			float: right;
+		}
+		#searchFullTransf {
+			display: none;
+			float: right;
+			max-width: 350px;
+			height: 35px;
+			margin-top: 7px;
+			padding: 5px 10px 5px 40px;
+			border-radius: 10px;
+			border: none;
+			background-color: white;
+			background-image: url('../images/header/searchImg.png');
+			background-position: 10px 5px;
+			background-repeat: no-repeat;
+			transition: all .4s ease-in-out;
+			&:focus {
+				outline: none;
+			}
+		}
+		#ua:hover {
+			#{$bg}: $urkColor;
+			color: white;
+			}
+		#pol:hover {
+			#{$bg}: $polColor;
+			color: white;
+			}
+		#vi:hover {
+			#{$bg}: $viColor;
+			color: white;
+			}
+		#vy:hover {
+			#{$bg}: $redColor;
+			color: white;
+			}
+		#bl:hover {
+			#{$bg}: $blogColor;
+			color: white;
+			}
+		#pros:hover {
+			#{$bg}: $prosColor;
+			color: white;
+			}
+		#gl:hover {
+			#{$bg}: $glamColor;
+			color: white;
+			}
+		#le:hover {
+			#{$bg}: $leColor;
+			color: white;
+			}
+		#tsi:hover {
+			#{$bg}: $tsiColor;
+			color: white;
+			}
+		#spec:hover {
+			#{$bg}: $specColor;
+			color: white;
+			}	
+		#all:hover {
+			#{$bg}: $allColor;
+			color: white;
+			&:before {
+				content: url('../images/menu/allWhite.png');
+			}
+		}
+	}
+}
+
+.transformed {
+	position: fixed;
+	top: 0px;
+	height: 50px;
+	margin-top: 0;
+	padding: 0px;
+	z-index: 3;
+	ul {
+		display: inline-block;
+		height: 48px;
+		width: 95.5%;
+	}
+}

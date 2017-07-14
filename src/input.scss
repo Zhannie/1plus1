@@ -1,0 +1,47 @@
+@font-face {
+	font-family: MyB;
+	src: url(MyriadPro/MyriadPro-Bold.otf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: MySB;
+	src: url(MyriadPro/MyriadPro-Semibold.otf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: MyC;
+	src: url(MyriadPro/MyriadPro-Cond.otf);
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: MyR;
+	src: url(MyriadPro/MyriadPro-Regular.otf);
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "layout/header";
+@import "layout/slider";
+@import "layout/menu";
+@import "layout/aside";
+@import "layout/main_news";
+@import "layout/photos";
+@import "layout/footer";
+@import "layout/media";
+
+
+
+body {
+	font-family: MyR;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+

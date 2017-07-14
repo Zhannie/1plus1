@@ -1,0 +1,16 @@
+
+@mixin grid($cs, $ce, $rs, $re) {
+	grid-column-start: $cs;
+	grid-column-end: $ce;
+	grid-row-start: $rs;
+	grid-row-end: $re;
+}
+
+
+$path-rel: "../images/header";
+@mixin logo($img, $img2) {
+	content: url('#{$path-rel}/#{$img}');
+	&:hover {
+		content: url('#{$path-rel}/#{$img2}');
+	}
+}

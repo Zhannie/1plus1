@@ -1,0 +1,65 @@
+.after {
+	width: 100%;
+	display: block;
+	height: 50px;
+	clear: both;
+}
+
+footer {
+	height: 250px;
+	background-color: black;
+	clear:both;
+	position: relative;
+	padding: 15px 7% 0px;
+	div {
+		display: inline-block;
+		margin: 10px 0px 60px;
+		width: 12%;
+		height: 30px;
+	}
+	.one {
+		background: url('../images/footer/logo-opo.svg') no-repeat center center;
+		background-size: contain;
+	}
+	.tet {
+		background: url('../images/footer/logo-tet.svg') no-repeat center center;
+		background-size: contain;
+	}
+	.two {
+		background: url('../images/footer/logo-tpt.svg') no-repeat center center;
+		background-size: contain;
+	}
+	.plus {
+		background: url('../images/footer/logo-pp.svg') no-repeat center center;		
+		background-size: contain;
+	}
+	.plus1 {
+		background: url('../images/footer/logo-opoi.svg') no-repeat center center;
+		background-size: contain;
+	}
+	.big {
+		background: url('../images/footer/logo-bigudi.svg') no-repeat center center;
+		background-size: contain;
+	}
+	.unian {
+		background: url('../images/footer/logo-unian.svg') no-repeat center center;
+		background-size: contain;
+	}
+	.ovva {
+		background: url('../images/footer/logo-ovva.svg') no-repeat center center;
+		background-size: contain;
+	}
+	p {
+		font-size: 3em;
+		color: white;
+		text-align: center;
+	}
+	.bottom {
+			background: url('../images/footer/2017.png') no-repeat;
+			width: 50%;
+			margin: 50px 0px 0px;
+			position: relative;
+			left: 45%;
+		}
+	
+}
