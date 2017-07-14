@@ -1,0 +1,142 @@
+.main{
+	//width: 96%;
+	max-width: 1250px;
+	position: relative;
+	margin-left: 50px;
+	white-space: nowrap;
+		.mmnews {
+			width: calc(100% - 380px);
+			margin: 0px;
+			position: relative;
+			&:after {
+				content: "";
+				background-image: url(../images/mainnews/mn_hor.png);
+				background-size: cover;
+				height: 10px;
+				width: 100%;
+				position: absolute;
+				bottom:-5px;
+				left: 0;
+			}
+			li {
+				display: inline-block;
+				font-size: .875em;
+				padding: 0px 10px 10px 0px;
+				&:first-child {
+					color: $redColor;
+				}
+			}
+		}
+
+		#videoFull {
+			display: none;
+			width: 365px;
+			height: 200px;
+			position: fixed;
+			top: 130px;
+			z-index: 3;
+			video {
+				width: 100%;
+				height: 100%;
+			}
+			#play {
+				content: $playBtn;
+				position: absolute;
+				top: 47%;
+				left: 47%;
+				cursor: pointer;
+			}
+			#quit {
+				content: $quitBtn;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				cursor: pointer;
+			}
+		}
+
+		.newaside{
+			width: calc(100% - 380px);
+			white-space: normal;
+			vertical-align: top;
+				.mainNews {
+					width: 100%;
+					padding: 0px;
+					white-space: nowrap;
+					&:after {
+						content: "";
+						clear: both;
+						height: 0px;
+					}
+					.news {
+						display: inline-block;
+						position: relative;
+						width: 32%;
+						height: 320px;
+						max-width: 280px;
+						padding: 10px 0px 20px 0px;
+						margin-right: 1%;
+						white-space: normal;
+						vertical-align: top;
+						.videoImg{
+							width: 100%;
+							//max-height: 190px;
+							margin: 0;
+							background: black;
+							position: relative;
+							margin-bottom: 4px;
+							img {
+								max-width: 100%;
+							}
+							.v {
+								background: url('../images/mainnews/video.png') no-repeat;
+								position: absolute;
+								height: 60px;
+								width: 60px;
+								top: 37%;
+								left: 40%;
+							}
+							.p {
+								background: url('../images/mainnews/video.png') no-repeat;
+								background-position: -130px -90px;
+								position: absolute;
+								height: 25px;
+								width: 30px;
+								top: 79%;
+								left: 85%;
+								cursor: pointer;
+							}
+						}
+						img {
+							max-width: 100%;
+						}
+						p {
+							text-align: left;
+							line-height: 20px;
+							height: 65px;
+							&.date, &.comments, &.watch {
+								display: inline-block;
+								font-size: .75em;
+								padding-top: 10px;
+								height: auto;
+								color: $fontColor;
+							}
+							&.watch, &.comments {
+								float: right;
+							}
+							&.comments:before {
+								content: url('../images/mainnews/comment.png');
+								padding: 0px 3px 0px;
+							}
+							&.watch:before {
+								content: url('../images/mainnews/view.png');
+								padding: 0px 3px 0px 10px;
+							}
+						}	
+						
+					}
+				}
+			}
+}
+
+	
