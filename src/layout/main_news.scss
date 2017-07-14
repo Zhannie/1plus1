@@ -1,5 +1,8 @@
+#moreBtn {
+	display: none;
+}
+
 .main{
-	//width: 96%;
 	max-width: 1250px;
 	position: relative;
 	margin-left: 50px;
@@ -80,7 +83,6 @@
 						vertical-align: top;
 						.videoImg{
 							width: 100%;
-							//max-height: 190px;
 							margin: 0;
 							background: black;
 							position: relative;

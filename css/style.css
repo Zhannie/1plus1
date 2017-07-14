@@ -188,6 +188,9 @@ header {
   visibility: hidden;
   display: none; }
 
+.mobSl, .mobBg {
+  display: none; }
+
 .slider {
   display: block;
   position: relative;
@@ -485,6 +488,9 @@ aside {
   float: none;
   width: 100%;
   height: 10px; }
+
+#moreBtn {
+  display: none; }
 
 .main {
   max-width: 1250px;
@@ -932,7 +938,8 @@ footer {
   header .left {
     min-width: 35px; }
   header nav {
-    width: 90%; }
+    width: 90%;
+    position: relative; }
     header nav ul li {
       padding: 5px; }
       header nav ul li:first-child {
@@ -953,14 +960,156 @@ footer {
     header nav ul .iconMobMenu {
       display: block;
       float: right;
-      margin: 1% 10px 0px;
+      margin: .5% 10px 0px;
       background: url(../images/mobile/menu.png) no-repeat center center;
       border: 0;
       height: 30px;
-      width: 30px; }
+      width: 30px;
+      cursor: pointer;
+      outline: none; }
+    header nav ul .mobMenu {
+      position: absolute;
+      top: 50px;
+      display: none;
+      height: 95vh;
+      width: 100%;
+      background-color: black;
+      z-index: 1; }
+      header nav ul .mobMenu .menuCol {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 100%; }
+        header nav ul .mobMenu .menuCol li {
+          display: block;
+          height: 9%;
+          font-size: 1em;
+          padding: 5% 10px 0;
+          float: none;
+          cursor: pointer;
+          vertical-align: middle; }
 
-  .slider ul li:first-child video {
-    display: none; } }
+  .main {
+    margin: 0; }
+    .main .photos {
+      display: none; }
+    .main .mmnews {
+      display: none; }
+    .main .newaside {
+      width: 100%; }
+      .main .newaside .mainNews .news {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        padding: 0px 0px 10px;
+        margin: 0;
+        text-align: left; }
+        .main .newaside .mainNews .news img {
+          margin: 0 auto;
+          width: 100%; }
+        .main .newaside .mainNews .news p {
+          padding: 0px 10px;
+          height: auto; }
+          .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
+            float: none; }
+      .main .newaside .mainNews #moreBtn {
+        display: block;
+        width: 150px;
+        padding: 15px;
+        margin: 0 auto;
+        border: 1px solid black;
+        text-align: center;
+        cursor: pointer; }
+      .main .newaside .hideMob {
+        display: none; }
+
+  .slider {
+    height: 100vh;
+    position: relative;
+    background-color: black; }
+    .slider .mobBg {
+      display: block;
+      max-width: 100%;
+      height: 100%;
+      background: url("../images/slider/makron.png") no-repeat left top; }
+    .slider .mobSl {
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      height: 43%;
+      width: 100%;
+      padding: 10px;
+      z-index: 3; }
+      .slider .mobSl .captionMob {
+        display: block;
+        position: relative;
+        padding: 0px 0px 15px;
+        width: 100%;
+        height: auto; }
+        .slider .mobSl .captionMob h2 {
+          font-size: 1em; }
+        .slider .mobSl .captionMob p {
+          font-size: .5em; }
+        .slider .mobSl .captionMob:after {
+          content: "";
+          position: absolute;
+          bottom: 5px;
+          background-color: #cc0000;
+          width: 100px;
+          height: 1px; }
+    .slider ul {
+      display: none; }
+    .slider .shadow {
+      bottom: 160px;
+      height: 300px; }
+
+  .buttons {
+    display: none; }
+
+  .border {
+    margin: 0 auto 10px;
+    max-width: 728px; }
+
+  .newaside, aside {
+    display: block; }
+
+  aside {
+    margin: 0px 0px 10px;
+    max-width: 100%;
+    background: none; }
+    aside h3 {
+      text-align: center; }
+    aside #banner {
+      display: none; }
+    aside .asideDiv {
+      padding: 15px 0; }
+      aside .asideDiv p span {
+        padding-top: 10px; }
+      aside .asideDiv div {
+        margin: 0 auto;
+        max-width: 300px; }
+        aside .asideDiv div img {
+          max-width: 300px; }
+      aside .asideDiv:nth-child(3):after {
+        content: "";
+        background: url("../images/aside/aside_hor.png") no-repeat;
+        background-size: contain;
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px; }
+
+  footer {
+    height: 200px; }
+    footer p {
+      padding: 30px; }
+    footer div:not(:last-of-type) {
+      display: none; }
+    footer div:last-of-type {
+      width: 25%;
+      left: 40%;
+      margin: 10px auto 0px; } }
 body {
   font-family: MyR;
   font-size: 16px;
