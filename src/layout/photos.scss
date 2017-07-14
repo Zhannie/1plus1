@@ -1,0 +1,167 @@
+.photos {
+	clear: both;
+	position: relative;
+	background-color: black;
+	width: 100%;
+	.back {
+		width: 2000px;
+		height: 100%;
+		background-color: black;
+		position: absolute;
+		top: 0;
+		margin: 0px -600px;
+		z-index: -1;
+	}
+	h3 {
+		font-size: 1.125em;
+		color: white;
+		padding: 10px 0px 10px;
+	}
+	.container {
+		max-width: 870px;
+		display: grid;
+		grid-template-columns: 19.3% 19.3% 19.3% 19.3% 19.3%;
+		grid-template-rows: 33% 33% 33%;
+		grid-column-gap: 8px;
+		grid-row-gap: 5px;
+		padding: 0px;
+		.item {
+			position: relative;
+			height: auto;
+			img {
+				width: 100%;
+			}
+			.iconv {
+				background: url('../images/mainnews/video.png') no-repeat;
+				background-position: -130px -90px;
+				position: absolute;
+				height: 30px;
+				width: 30px;
+				top: 0;
+				right: 10px;
+				cursor: pointer;
+			}
+			p {
+				display: none;
+				position: absolute;
+				bottom: 5%;
+				height: auto;
+				width: 85%;
+				background-color: $redColor;
+				text-align: left;
+				font-size: .875em;
+				color: white;
+				padding: 10px 30px 10px 15px;
+				line-height: 16px;
+				&.first {
+					width: 63%;
+					padding-right: 10px;
+					bottom: 10%;
+				}
+			}
+			&:hover p {
+				display: block;
+			}
+			
+		}
+		.item-1 {
+			@include grid(1, 3, 1, 2);
+		}
+		.item-2 {
+			@include grid(3, 4, 1, 3);
+		}
+		.item-4 {
+			@include grid(5, 6, 1, 3);
+		}
+		.item-6 {
+			@include grid(2, 3, 2, 4);
+		}
+		.item-10 {
+			@include grid(4, 6, 3, 4);
+		}
+	}
+}
+
+#gallery {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.9);
+	z-index: 999;
+	#mainG {
+		position: relative;
+		top: 20%;
+		background-color: black;
+		text-align: center;
+		.fullImg{
+			p {
+				color: white;
+				padding: 10px 100px;
+				text-align: left;
+			}
+			img {
+				margin: 0 auto;
+			}
+		}
+		.quit {
+			content: $quitBtn;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			cursor: pointer;
+		}		
+		.thumb {
+			width: 90%;
+			margin: 0 auto;
+			height: 70px;
+			background-color: black;
+			img {
+				display: block;
+				width: 7.6%;
+				float: left;
+				opacity: .4;
+			}
+		}
+	}
+}
+
+.thumbActive {
+			border: 1px solid white;
+		}
+
+
+.border {
+	position: relative;
+	max-width: 728px;
+	height: 90px;
+	margin: 20px auto;
+	cursor: pointer;
+	.content {
+		position: relative;
+		//width: 100%;
+		padding-bottom: 16%;
+		padding-top: 25px;
+		height: 0;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+	}
+	.transparent {
+		position: absolute;
+		display: block;
+		width: 100%;
+		top: 0;
+		img {
+			width: 100%;
+			height: 90px;
+		}
+	}
+}
+
+
