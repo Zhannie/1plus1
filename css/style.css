@@ -997,7 +997,7 @@ footer {
   header .left {
     min-width: 35px; }
   header nav {
-    width: 90%;
+    width: calc(100% - 40px);
     position: relative; }
     header nav ul li {
       padding: 5px; }
@@ -1123,20 +1123,20 @@ footer {
     .slider .mobBg {
       display: block;
       max-width: 100%;
-      height: 100%;
+      height: 50%;
       background: url("../images/slider/makron.png") no-repeat 20% 50%; }
     .slider .mobSl {
       display: block;
       position: absolute;
       bottom: 0px;
-      height: 43%;
+      height: auto;
       width: 100%;
       padding: 10px;
       z-index: 3; }
       .slider .mobSl .captionMob {
         display: block;
         position: relative;
-        padding: 0px 0px 15px;
+        padding: 0px 0px 10px;
         width: 100%;
         height: auto; }
         .slider .mobSl .captionMob h2 {
@@ -1153,8 +1153,8 @@ footer {
     .slider ul {
       display: none; }
     .slider .shadow {
-      bottom: 160px;
-      height: 300px; }
+      bottom: 50%;
+      height: 200px; }
 
   .buttons {
     display: none; }
