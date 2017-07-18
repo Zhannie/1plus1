@@ -64,18 +64,20 @@ header {
         padding: 0px 5px; }
       header nav li:nth-child(5):after {
         display: none; }
+      header nav li:nth-child(7):after {
+        display: none; }
     header nav #euro:before {
       content: url(../images/header/up.png);
       padding-right: 5px; }
     header nav #dollar:before {
       content: url(../images/header/down.png);
       padding-right: 5px; }
-  header .search:before {
-    content: url(../images/header/search.png);
-    cursor: pointer; }
-  header .share:before {
-    content: url(../images/header/share.png);
-    cursor: pointer; }
+  header .search, header .share {
+    background: url(../images/header/search.png) no-repeat center center;
+    cursor: pointer;
+    padding: 25px 25px 15px; }
+  header .share {
+    background: url(../images/header/share.png) no-repeat center center; }
   header #searchFull {
     display: none;
     float: right;
@@ -199,7 +201,7 @@ header {
   height: 500px;
   border: 0;
   overflow: hidden;
-  z-index: -1; }
+  z-index: 0; }
   .slider video {
     width: 100%; }
 
@@ -235,7 +237,7 @@ header {
   bottom: 20px;
   padding: 0px 550px 10px 100px;
   text-align: left; }
-  .caption h2 {
+  .caption a h2 {
     font-size: 2.25em;
     color: white;
     text-shadow: 0px 1px gray; }
@@ -254,11 +256,17 @@ header {
   width: 20px;
   z-index: 2; }
   .buttons button {
+    height: 30px;
+    margin-bottom: 8px;
     background-color: transparent;
+    background: url(../images/slider/sl.png) no-repeat center center;
     border: none;
     cursor: pointer; }
   .buttons button:active, .buttons button:focus {
     outline: none; }
+  .buttons .activeSlide {
+    background: url("../images/slider/sl_arr.png") no-repeat center center;
+    margin-left: 5px; }
 
 .slide:nth-of-type(2) {
   background-image: url(../images/slider/makron.png);
@@ -276,6 +284,9 @@ header {
   background-image: url(../images/slider/spyrt.png);
   background-size: cover; }
 
+.menuMobile {
+  display: none; }
+
 .menu {
   display: block;
   width: 100%;
@@ -284,8 +295,7 @@ header {
   margin: -20px 0px 25px;
   background-color: #edede6;
   border: 1px solid #edede6;
-  z-index: -1;
-  transition: all .4s ease-in-out; }
+  z-index: -1; }
   .menu .left {
     display: none; }
   .menu ul {
@@ -293,60 +303,69 @@ header {
     white-space: nowrap;
     vertical-align: middle; }
     .menu ul li {
-      display: inline-block;
-      padding: 14px .5%;
-      vertical-align: center;
-      cursor: pointer;
-      text-align: center; }
-      .menu ul li:hover {
-        color: white; }
-    .menu ul #all {
-      width: 130px;
-      color: #bfbfac; }
-      .menu ul #all:before {
-        content: url(../images/menu/all.png);
-        padding-right: 8px; }
-    .menu ul .dropdown {
-      position: relative; }
-      .menu ul .dropdown:hover .dcontent {
-        display: block; }
-    .menu ul .dcontent {
-      display: none;
-      position: absolute;
-      top: 43px;
-      left: 0;
-      width: 130px;
-      padding: 10px 0;
-      background-color: #edede6;
-      box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
-      z-index: 1; }
-      .menu ul .dcontent a {
+      display: inline-block; }
+      .menu ul li a {
         display: block;
-        padding: 5px 15px;
-        text-decoration: none;
-        text-align: left;
-        color: #bfbfac; }
-        .menu ul .dcontent a:hover {
-          background-color: #bfbfb4;
+        padding: 14px .5%;
+        text-align: center;
+        color: black; }
+        .menu ul li a:hover {
           color: white; }
-        .menu ul .dcontent a li {
-          width: 100%;
-          height: 100%;
-          padding: 0px;
-          font-size: 100%;
-          text-align: left; }
+      .menu ul li .dcontent {
+        display: none;
+        position: absolute;
+        top: 43px;
+        left: 0;
+        width: 130px;
+        padding: 10px 0;
+        background-color: #edede6;
+        box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+        z-index: 1; }
+        .menu ul li .dcontent a {
+          display: block;
+          padding: 5px 15px;
+          text-decoration: none;
+          text-align: left;
+          color: #bfbfac; }
+          .menu ul li .dcontent a:hover {
+            background-color: #bfbfb4;
+            color: white; }
+          .menu ul li .dcontent a li {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            font-size: 100%;
+            text-align: left; }
+    .menu ul #all {
+      display: inline-block;
+      width: 130px;
+      position: relative; }
+      .menu ul #all a {
+        color: #bfbfac; }
+        .menu ul #all a:hover {
+          color: white;
+          background-color: #bfbfb4; }
+        .menu ul #all a.all:before {
+          content: url(../images/menu/all.png);
+          padding-right: 8px; }
+        .menu ul #all a.all:hover:before {
+          content: url("../images/menu/allWhite.png"); }
+      .menu ul #all:hover .dcontent {
+        display: block; }
     .menu ul .searchSec {
       display: none;
       width: 50px;
-      padding: 20px 10px;
+      padding: 10px 10px;
       background: url("../images/header/searchImg.png") no-repeat center center;
       cursor: pointer; }
     .menu ul .shareSec {
       display: none;
       background: url("../images/header/shareImg.png") no-repeat center center;
       width: 50px;
-      padding: 20px 10px;
+      padding: 10px 10px;
       cursor: pointer; }
+      .menu ul .shareSec a {
+        width: 50px; }
     .menu ul .right {
       float: right; }
     .menu ul #searchFullTransf {
@@ -368,38 +387,33 @@ header {
     .menu ul #ua:hover {
       background-color: #ffd400;
       color: white; }
-    .menu ul #pol:hover {
+    .menu ul #politics:hover {
       background-color: #30b3bf;
       color: white; }
-    .menu ul #vi:hover {
+    .menu ul #videos:hover {
       background-color: #3640b3;
       color: white; }
-    .menu ul #vy:hover {
+    .menu ul #vypusky:hover {
       background-color: #cc0000;
       color: white; }
-    .menu ul #bl:hover {
+    .menu ul #blogs:hover {
       background-color: #cca266;
       color: white; }
-    .menu ul #pros:hover {
+    .menu ul #prosport:hover {
       background-color: #73cc33;
       color: white; }
-    .menu ul #gl:hover {
+    .menu ul #glam:hover {
       background-color: #ba39e6;
       color: white; }
-    .menu ul #le:hover {
+    .menu ul #ledi:hover {
       background-color: #f2b6f2;
       color: white; }
-    .menu ul #tsi:hover {
+    .menu ul #tsikavynky:hover {
       background-color: #f26522;
       color: white; }
-    .menu ul #spec:hover {
+    .menu ul #specprojects:hover {
       background-color: #f2b600;
       color: white; }
-    .menu ul #all:hover {
-      background-color: #bfbfb4;
-      color: white; }
-      .menu ul #all:hover:before {
-        content: url("../images/menu/allWhite.png"); }
 
 .transformed {
   position: fixed;
@@ -434,17 +448,19 @@ aside {
     font-family: MyR;
     position: relative;
     padding: 15px 0; }
-    aside .asideDiv div {
-      width: 100%;
-      height: 118.95px;
-      margin-top: -15px;
-      padding: 0px;
-      overflow: hidden; }
-      aside .asideDiv div img {
+    aside .asideDiv a {
+      color: black; }
+      aside .asideDiv a div {
         width: 100%;
-        height: 100%; }
-        aside .asideDiv div img:hover {
-          transform: scale(1.2); }
+        height: 118.95px;
+        margin-top: -15px;
+        padding: 0px;
+        overflow: hidden; }
+        aside .asideDiv a div img {
+          width: 100%;
+          height: 100%; }
+          aside .asideDiv a div img:hover {
+            transform: scale(1.2); }
     aside .asideDiv:not(:nth-child(3)):after {
       content: "";
       background: url("../images/aside/aside_hor.png") no-repeat;
@@ -465,10 +481,14 @@ aside {
       padding-top: 20px;
       color: #bfbfac; }
   aside #load {
-    text-align: center;
-    padding: 10px 0px 0px; }
-    aside #load p {
-      display: inline-block; }
+    display: block;
+    text-align: center; }
+    aside #load a {
+      padding: 10px 0px 0px;
+      margin: 0 auto;
+      color: black; }
+      aside #load a p {
+        display: inline-block; }
     aside #load#load:after {
       content: url(../images/aside/load.png);
       display: inline-block;
@@ -508,20 +528,22 @@ aside {
       height: 10px;
       width: 100%;
       position: absolute;
-      bottom: -5px;
+      bottom: 0px;
       left: 0; }
     .main .mmnews li {
       display: inline-block;
-      font-size: .875em;
       padding: 0px 10px 10px 0px; }
-      .main .mmnews li:first-child {
+      .main .mmnews li a {
+        font-size: .875em;
+        color: black; }
+      .main .mmnews li:first-child a {
         color: #cc0000; }
   .main #videoFull {
     display: none;
     width: 365px;
     height: 200px;
     position: fixed;
-    top: 130px;
+    top: 230px;
     z-index: 3; }
     .main #videoFull video {
       width: 100%;
@@ -560,50 +582,77 @@ aside {
         margin-right: 1%;
         white-space: normal;
         vertical-align: top; }
-        .main .newaside .mainNews .news .videoImg {
-          width: 100%;
-          margin: 0;
-          background: black;
-          position: relative;
-          margin-bottom: 4px; }
-          .main .newaside .mainNews .news .videoImg img {
+        .main .newaside .mainNews .news a {
+          display: block;
+          height: auto; }
+          .main .newaside .mainNews .news a .videoImg {
+            max-width: 280px;
+            margin: 0;
+            background-color: black;
+            max-height: 190px;
+            background: black;
+            position: relative;
+            margin-bottom: 4px;
+            background-size: cover;
+            overflow: hidden; }
+            .main .newaside .mainNews .news a .videoImg img {
+              width: auto;
+              max-width: 100%;
+              height: auto;
+              max-height: 100%; }
+            .main .newaside .mainNews .news a .videoImg .v {
+              background: url("../images/mainnews/video.png") no-repeat;
+              position: absolute;
+              height: 60px;
+              width: 60px;
+              top: 37%;
+              left: 40%; }
+            .main .newaside .mainNews .news a .videoImg .p {
+              background: url("../images/mainnews/video.png") no-repeat;
+              background-position: -130px -90px;
+              position: absolute;
+              height: 25px;
+              width: 30px;
+              top: 79%;
+              left: 85%;
+              cursor: pointer; }
+            .main .newaside .mainNews .news a .videoImg .opened {
+              background: url(../images/mainnews/icon.png) no-repeat center center;
+              position: absolute;
+              height: 60px;
+              width: 60px;
+              top: 37%;
+              left: 40%; }
+          .main .newaside .mainNews .news a img {
             max-width: 100%; }
-          .main .newaside .mainNews .news .videoImg .v {
-            background: url("../images/mainnews/video.png") no-repeat;
-            position: absolute;
-            height: 60px;
-            width: 60px;
-            top: 37%;
-            left: 40%; }
-          .main .newaside .mainNews .news .videoImg .p {
-            background: url("../images/mainnews/video.png") no-repeat;
-            background-position: -130px -90px;
-            position: absolute;
-            height: 25px;
-            width: 30px;
-            top: 79%;
-            left: 85%;
-            cursor: pointer; }
-        .main .newaside .mainNews .news img {
-          max-width: 100%; }
-        .main .newaside .mainNews .news p {
-          text-align: left;
+          .main .newaside .mainNews .news a p {
+            text-align: left;
+            line-height: 20px;
+            height: 65px;
+            color: black; }
+        .main .newaside .mainNews .news p.date, .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
+          display: inline-block;
           line-height: 20px;
-          height: 65px; }
-          .main .newaside .mainNews .news p.date, .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
-            display: inline-block;
-            font-size: .75em;
-            padding-top: 10px;
-            height: auto;
-            color: #bfbfac; }
-          .main .newaside .mainNews .news p.watch, .main .newaside .mainNews .news p.comments {
-            float: right; }
-          .main .newaside .mainNews .news p.comments:before {
-            content: url("../images/mainnews/comment.png");
-            padding: 0px 3px 0px; }
-          .main .newaside .mainNews .news p.watch:before {
-            content: url("../images/mainnews/view.png");
-            padding: 0px 3px 0px 10px; }
+          font-size: .75em;
+          padding-top: 10px;
+          vertical-align: bottom;
+          color: #bfbfac; }
+        .main .newaside .mainNews .news p.date .svit {
+          color: #028fbd; }
+        .main .newaside .mainNews .news p.date .ukraine {
+          color: #ffd400; }
+        .main .newaside .mainNews .news p.date .glamur {
+          color: #ba39e6; }
+        .main .newaside .mainNews .news p.date .money {
+          color: #1bb367; }
+        .main .newaside .mainNews .news p.watch, .main .newaside .mainNews .news p.comments {
+          float: right; }
+        .main .newaside .mainNews .news p.comments:before {
+          content: url("../images/mainnews/comment.png");
+          padding: 0px 3px 0px; }
+        .main .newaside .mainNews .news p.watch:before {
+          content: url("../images/mainnews/view.png");
+          padding: 15px 3px 0px 10px; }
 
 .photos {
   clear: both;
@@ -733,16 +782,13 @@ aside {
   margin: 20px auto;
   cursor: pointer; }
   .border .content {
-    position: relative;
-    padding-bottom: 16%;
-    padding-top: 25px;
-    height: 0; }
-    .border .content iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%; }
+    .border .content iframe, .border .content object, .border .content embed {
       width: 100%;
-      height: 100%; }
+      height: 90px; }
   .border .transparent {
     position: absolute;
     display: block;
@@ -763,7 +809,8 @@ footer {
   background-color: black;
   clear: both;
   position: relative;
-  padding: 15px 7% 0px; }
+  padding: 15px 7% 0px;
+  text-align: center; }
   footer div {
     display: inline-block;
     margin: 10px 0px 60px;
@@ -798,11 +845,21 @@ footer {
     color: white;
     text-align: center; }
   footer .bottom {
-    background: url("../images/footer/2017.png") no-repeat;
-    width: 50%;
-    margin: 50px 0px 0px;
+    color: white;
+    margin: 50px auto 0px auto;
     position: relative;
-    left: 45%; }
+    width: 120px;
+    font-size: .875em; }
+    footer .bottom:before, footer .bottom:after {
+      content: "";
+      height: 7px;
+      width: 35px;
+      border-top: 1px solid white;
+      position: absolute;
+      top: 5px;
+      left: 0; }
+    footer .bottom:after {
+      left: 85px; }
 
 @media (min-width: 1401px) {
   header, .slider {
@@ -820,18 +877,20 @@ footer {
     left: 0; }
 
   .main {
-    margin: 0 auto; } }
+    margin: 0 auto; }
+    .main .newaside .mainNews .news a .videoImg {
+      height: 65%; } }
 @media (min-width: 991px) and (max-width: 1200px) {
   header nav {
     width: 94%; }
 
-  .caption {
+  .caption a {
     font-size: .9em;
     padding-right: 400px; }
 
   .menu {
     padding-left: 40px; }
-    .menu ul li {
+    .menu ul li a {
       font-size: .9em; }
 
   .main {
@@ -855,18 +914,16 @@ footer {
         margin: 0 2px;
         height: 280px;
         max-width: 32.5%; }
-        .main .newaside .mainNews .news videoImg {
-          height: 95%; }
-          .main .newaside .mainNews .news videoImg img {
-            height: 100%; }
-        .main .newaside .mainNews .news img {
+        .main .newaside .mainNews .news a .videoImg {
+          max-height: 170px; }
+        .main .newaside .mainNews .news a img {
           max-width: 100%; }
-        .main .newaside .mainNews .news p {
+        .main .newaside .mainNews .news a p {
           font-size: .875em; }
-          .main .newaside .mainNews .news p.date, .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
-            font-size: .7em; }
-            .main .newaside .mainNews .news p.date span, .main .newaside .mainNews .news p.comments span, .main .newaside .mainNews .news p.watch span {
-              display: block; }
+        .main .newaside .mainNews .news p.date, .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
+          font-size: .7em; }
+          .main .newaside .mainNews .news p.date span, .main .newaside .mainNews .news p.comments span, .main .newaside .mainNews .news p.watch span {
+            display: block; }
 
   .transformed ul {
     width: 94%; } }
@@ -878,12 +935,12 @@ footer {
     height: 420px; }
     .slider .slide {
       height: 420px; }
-    .slider .caption {
+    .slider .caption a {
       padding: 0px 250px 0px 40px; }
 
   .menu {
     padding: 0px 380px 0px 20px; }
-    .menu ul li {
+    .menu ul li a {
       padding: 14px 0.2%;
       font-size: .9em; }
 
@@ -891,7 +948,7 @@ footer {
     padding: 0px 20px; }
     .transformed ul {
       width: 94%; }
-      .transformed ul li {
+      .transformed ul li a {
         padding: 14px .2%; }
 
   .main {
@@ -905,27 +962,29 @@ footer {
         max-width: 32.5%;
         height: 270px;
         padding: 0px; }
-        .main .newaside .mainNews .news .videoImg .v {
-          top: 30%;
-          left: 35%; }
-        .main .newaside .mainNews .news .videoImg .p {
-          top: 73%;
-          left: 80%; }
-        .main .newaside .mainNews .news img {
+        .main .newaside .mainNews .news a .videoImg {
+          max-height: 145px; }
+          .main .newaside .mainNews .news a .videoImg .v {
+            top: 30%;
+            left: 35%; }
+          .main .newaside .mainNews .news a .videoImg .p {
+            top: 73%;
+            left: 80%; }
+        .main .newaside .mainNews .news a img {
           max-width: 100%; }
-        .main .newaside .mainNews .news p {
+        .main .newaside .mainNews .news a p {
           font-size: .875em;
           line-height: 14px; }
-          .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
-            float: left;
-            padding-top: 0; }
-          .main .newaside .mainNews .news p.date {
-            display: block;
-            padding-top: 3px; }
-            .main .newaside .mainNews .news p.date span {
-              display: block; }
-          .main .newaside .mainNews .news p.watch {
-            margin-left: -5px; }
+        .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
+          float: left;
+          padding-top: 0; }
+        .main .newaside .mainNews .news p.date {
+          display: block;
+          padding-top: 3px; }
+          .main .newaside .mainNews .news p.date span {
+            display: block; }
+        .main .newaside .mainNews .news p.watch {
+          margin-left: -5px; }
     .main aside {
       max-width: 250px;
       margin: -260px 0px 0px 20px;
@@ -986,8 +1045,34 @@ footer {
           font-size: 1em;
           padding: 5% 10px 0;
           float: none;
-          cursor: pointer;
           vertical-align: middle; }
+          header nav ul .mobMenu .menuCol li a {
+            color: white; }
+
+  .menu {
+    display: none; }
+
+  .menuMobile {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid gray;
+    height: 40px;
+    margin: 0px 0px 20px 0px; }
+    .menuMobile::-webkit-scrollbar {
+      display: none; }
+    .menuMobile li {
+      display: inline-block;
+      height: 100%; }
+      .menuMobile li a {
+        display: block;
+        padding: 10px 8px;
+        height: 100%;
+        color: black; }
+        .menuMobile li a:hover {
+          background-color: #bfbfb4; }
 
   .main {
     margin: 0; }
@@ -1005,14 +1090,21 @@ footer {
         padding: 0px 0px 10px;
         margin: 0;
         text-align: left; }
-        .main .newaside .mainNews .news img {
+        .main .newaside .mainNews .news a .videoImg {
+          max-width: 100%;
+          max-height: 100%; }
+          .main .newaside .mainNews .news a .videoImg img {
+            width: 100%; }
+        .main .newaside .mainNews .news a img {
           margin: 0 auto;
           width: 100%; }
-        .main .newaside .mainNews .news p {
+        .main .newaside .mainNews .news a p {
           padding: 0px 10px;
           height: auto; }
-          .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
-            float: none; }
+        .main .newaside .mainNews .news p.date {
+          padding-left: 10px; }
+        .main .newaside .mainNews .news p.comments, .main .newaside .mainNews .news p.watch {
+          float: none; }
       .main .newaside .mainNews #moreBtn {
         display: block;
         width: 150px;
@@ -1032,7 +1124,7 @@ footer {
       display: block;
       max-width: 100%;
       height: 100%;
-      background: url("../images/slider/makron.png") no-repeat left top; }
+      background: url("../images/slider/makron.png") no-repeat 20% 50%; }
     .slider .mobSl {
       display: block;
       position: absolute;
@@ -1107,12 +1199,13 @@ footer {
     footer div:not(:last-of-type) {
       display: none; }
     footer div:last-of-type {
-      width: 25%;
-      left: 40%;
       margin: 10px auto 0px; } }
 body {
   font-family: MyR;
   font-size: 16px;
   overflow-x: hidden; }
+
+a {
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

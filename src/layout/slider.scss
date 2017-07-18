@@ -10,7 +10,7 @@
 	height: 500px;
 	border:0;
 	overflow: hidden;
-	z-index: -1;
+	z-index: 0;
 	video {
 		width: 100%;
 	}
@@ -52,10 +52,12 @@
 	bottom:20px;
 	padding: 0px 550px 10px 100px;
 	text-align: left;
-	h2 {
-		font-size: 2.25em;
-		color: white;
-		text-shadow: 0px 1px gray;
+	a {
+		h2 {
+			font-size: 2.25em;
+			color: white;
+			text-shadow: 0px 1px gray;
+		}
 	}
 	p {
 		padding-top: 10px;
@@ -75,12 +77,19 @@
 	width: 20px;
 	z-index: 2;
 	button {
+		height: 30px;
+		margin-bottom: 8px;
 		background-color: transparent;
+		background: url(../images/slider/sl.png) no-repeat center center;
 		border: none;
 		cursor: pointer;
 	}
 	button:active, button:focus {
 		outline: none;
+	}
+	.activeSlide {
+		background: url('../images/slider/sl_arr.png') no-repeat center center;
+		margin-left: 5px;
 	}
 }
 

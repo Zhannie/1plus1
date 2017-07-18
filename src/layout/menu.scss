@@ -1,3 +1,6 @@
+.menuMobile {
+	display: none;
+}
 .menu {
 	display: block;
 	width: 100%;
@@ -7,7 +10,6 @@
 	background-color: $bgmenu;
 	border: 1px solid $bgmenu;
 	z-index: -1;
-	transition: all .4s ease-in-out;
 	.left {
 		display: none;
 	}
@@ -17,62 +19,74 @@
 		vertical-align: middle;
 		li {
 			display: inline-block;
-			padding: 14px .5%;
-			vertical-align: center;
-			cursor: pointer;
-			text-align: center;	
-			&:hover {
-				color: white;
+			a {
+				display: block;
+				padding: 14px .5%;
+				text-align: center;	
+				color: black;
+				&:hover {
+					color: white;
+				}
+			}
+			.dcontent {
+				display: none;
+				position: absolute;
+				top: 43px;
+				left: 0;
+				width: 130px;
+				padding: 10px 0;
+				background-color: $bgmenu;
+				box-shadow: 0 7px 10px rgba(0,0,0,.5);
+				z-index: 1;
+				a {
+					display: block;
+					padding: 5px 15px;
+					text-decoration: none;
+					text-align: left;
+					color: $fontColor; 
+					&:hover {
+						background-color: $allColor;
+						color: white;
+					}
+					li {
+						width: 100%;
+						height: 100%;
+						padding: 0px;
+						font-size: 100%;
+						text-align: left;
+					}
+				}
 			}
 		}
 		#all {
+			display: inline-block;
 			width: 130px;
-			color: $fontColor;
-				&:before {
+			position: relative;
+			a {
+				color: $fontColor;
+				&:hover {
+					color: white;
+					#{$bg}: $allColor;
+				}
+				&.all:before {
 					content: url(../images/menu/all.png);
 					padding-right: 8px;
 				}
+				&.all:hover {
+					&:before {
+						content: url('../images/menu/allWhite.png');
+					}
+				}
+			}
+			&:hover .dcontent {
+				display: block;
+			}
 		}
 		
-		.dropdown {
-			position: relative;
-			&:hover .dcontent{
-				display: block;
-			}
-		}
-		.dcontent {
-			display: none;
-			position: absolute;
-			top: 43px;
-			left: 0;
-			width: 130px;
-			padding: 10px 0;
-			background-color: $bgmenu;
-			box-shadow: 0 7px 10px rgba(0,0,0,.5);
-			z-index: 1;
-			a {
-				display: block;
-				padding: 5px 15px;
-				text-decoration: none;
-				text-align: left;
-				color: $fontColor; 
-				&:hover {
-					background-color: $allColor;
-					color: white;
-				}
-				li {
-					width: 100%;
-					height: 100%;
-					padding: 0px;
-					font-size: 100%;
-					text-align: left;
-				}
-			}
-		}
 		.searchSec {
 			display: none;
 			width: 50px;
-			padding: 20px 10px;
+			padding: 10px 10px;
 			background: url('../images/header/searchImg.png') no-repeat center center;
 			cursor: pointer;
 		}
@@ -80,7 +94,10 @@
 			display: none;
 			background: url('../images/header/shareImg.png') no-repeat center center;
 			width: 50px;
-			padding: 20px 10px;
+			padding: 10px 10px;
+			a {
+				width: 50px;
+			}
 			cursor: pointer;
 		}
 		.right {
@@ -108,49 +125,43 @@
 			#{$bg}: $urkColor;
 			color: white;
 			}
-		#pol:hover {
+		#politics:hover {
 			#{$bg}: $polColor;
 			color: white;
 			}
-		#vi:hover {
+		#videos:hover {
 			#{$bg}: $viColor;
 			color: white;
 			}
-		#vy:hover {
+		#vypusky:hover {
 			#{$bg}: $redColor;
 			color: white;
 			}
-		#bl:hover {
+		#blogs:hover {
 			#{$bg}: $blogColor;
 			color: white;
 			}
-		#pros:hover {
+		#prosport:hover {
 			#{$bg}: $prosColor;
 			color: white;
 			}
-		#gl:hover {
+		#glam:hover {
 			#{$bg}: $glamColor;
 			color: white;
 			}
-		#le:hover {
+		#ledi:hover {
 			#{$bg}: $leColor;
 			color: white;
 			}
-		#tsi:hover {
+		#tsikavynky:hover {
 			#{$bg}: $tsiColor;
 			color: white;
 			}
-		#spec:hover {
+		#specprojects:hover {
 			#{$bg}: $specColor;
 			color: white;
 			}	
-		#all:hover {
-			#{$bg}: $allColor;
-			color: white;
-			&:before {
-				content: url('../images/menu/allWhite.png');
-			}
-		}
+		
 	}
 }
 

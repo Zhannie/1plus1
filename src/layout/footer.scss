@@ -11,6 +11,7 @@ footer {
 	clear:both;
 	position: relative;
 	padding: 15px 7% 0px;
+	text-align: center;
 	div {
 		display: inline-block;
 		margin: 10px 0px 60px;
@@ -55,11 +56,23 @@ footer {
 		text-align: center;
 	}
 	.bottom {
-			background: url('../images/footer/2017.png') no-repeat;
-			width: 50%;
-			margin: 50px 0px 0px;
-			position: relative;
-			left: 45%;
+		color: white;
+		margin: 50px auto 0px auto;
+		position: relative;
+		width: 120px;
+		font-size: .875em;
+		&:before, &:after {
+			content: "";
+			height: 7px;
+			width: 35px;
+			border-top: 1px solid white;
+			position: absolute;
+			top: 5px;
+			left: 0;
 		}
+		&:after {
+			left: 85px;
+		}
+	}
 	
 }

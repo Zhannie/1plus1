@@ -52,6 +52,9 @@ header {
 			&:nth-child(5):after {
 				display: none;
 			}
+			&:nth-child(7):after {
+				display: none;
+			}
 		}
 		#euro:before {
 			content: url(../images/header/up.png);
@@ -62,13 +65,17 @@ header {
 			padding-right: 5px;
 		}
 	}	
-		.search:before {
-			content: url(../images/header/search.png);
+		.search {
+			background: url(../images/header/search.png) no-repeat center center;
+			//width: 30px;
+			//height: 30px;
 			cursor: pointer;
+			padding: 25px 25px 15px;
 		}
-		.share:before {
-			content: url(../images/header/share.png);
-			cursor: pointer;
+		.share {
+			@extend .search;
+			background: url(../images/header/share.png) no-repeat center center;
+			
 		}
 		#searchFull {
 			display: none;

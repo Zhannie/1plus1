@@ -15,6 +15,17 @@
 	}
 	.main {
 		margin: 0 auto; 
+		.newaside {
+			.mainNews {
+				.news {
+					a {
+						.videoImg {
+							height: 65%;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -25,14 +36,18 @@
 		}
 	}
 	.caption {
+		a {
 		font-size: .9em;
 		padding-right: 400px;
+		}
 	}
 	.menu {
 		padding-left: 40px;
 		ul {
 			li {
+				a{
 				font-size: .9em;
+				}
 			}
 		}
 	}
@@ -63,24 +78,24 @@
 					margin: 0 2px;
 					height: 280px;
 					max-width: 32.5%;
-					videoImg{
-						height: 95%;
+					a {
+						.videoImg{
+							max-height: 170px;
+						}
 						img {
-							height: 100%;
+							max-width: 100%;
+						}
+						p {
+							font-size: .875em;
 						}
 					}
-					img {
-						max-width: 100%;
-					}
-					p {
-						font-size: .875em;
-						&.date, &.comments, &.watch {
+						p.date, p.comments, p.watch {
 							font-size: .7em;
 							span {
 								display: block;
 							}
 						}
-					}
+					
 				}
 
 			}
@@ -106,15 +121,19 @@
 			height: 420px;
 		}
 		.caption {
-			padding: 0px 250px 0px 40px;
+			a {
+				padding: 0px 250px 0px 40px;
+			}
 		}
 	}
 	.menu {
 		padding: 0px 380px 0px 20px;
 		ul {
 			li {
-				padding: 14px 0.2%;
-				font-size: .9em;
+				a{
+					padding: 14px 0.2%;
+					font-size: .9em;
+				}
 			}
 		}
 	}
@@ -123,7 +142,9 @@
 		ul {
 			width: 94%;
 			li {
-				padding: 14px .2%;
+				a{
+					padding: 14px .2%;
+				}
 			}
 		}
 	}
@@ -140,39 +161,43 @@
 					max-width: 32.5%;
 					height: 270px;
 					padding: 0px;
-					.videoImg {
-						.v {
-							top: 30%;
-							left: 35%;
+					a {
+						.videoImg {
+							max-height: 145px;
+							.v {
+								top: 30%;
+								left: 35%;
+							}
+							.p {
+								top: 73%;
+								left: 80%;
+							}
 						}
-						.p {
-							top: 73%;
-							left: 80%;
+						img {
+							max-width: 100%;
+						}
+						p {
+							font-size: .875em;
+							line-height: 14px;
 						}
 					}
-					img {
-						max-width: 100%;
-					}
-					p {
-						font-size: .875em;
-						line-height: 14px;
-						&.comments, &.watch {
+						p.comments, p.watch {
 							float: left;
 							padding-top: 0;
 						}
-						&.date {
+						p.date {
 							display: block;
 							padding-top: 3px;
 							span {
 								display: block;
 							}
 						}
-						&.watch {
+						p.watch {
 							margin-left: -5px;
 						}
 					}
 
-				}
+				
 			}
 		}
 		
@@ -253,14 +278,47 @@
 							font-size: 1em;
 							padding: 5% 10px 0;
 							float: none;
-							cursor: pointer;
 							vertical-align: middle;
+							a {
+								color: white;
+							}
 						}
 					}
 				
 				}
 			}
 		}	
+	}
+
+	.menu {
+	 	display: none;
+	}
+
+	.menuMobile {
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+		overflow-x: scroll;
+		-webkit-overflow-scrolling: touch;
+		border: 1px solid gray;
+		height: 40px;
+		margin: 0px 0px 20px 0px;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		li {
+			display: inline-block;
+			height: 100%;
+			a {
+				display: block;
+				padding: 10px 8px;
+				height: 100%;
+				color: black;
+				&:hover {
+					background-color: $allColor;
+				}
+			}
+		}
 	}
 
 	.main {
@@ -282,17 +340,31 @@
 					padding: 0px 0px 10px;
 					margin: 0;
 					text-align: left;
-					img {
-						margin: 0 auto;
-						width: 100%;
-					}
-					p {
-						padding: 0px 10px;
-						height: auto;
-						&.comments, &.watch {
-							float: none;					
+					a {
+						.videoImg {
+							max-width: 100%;
+							max-height: 100%;
+							img {
+								width: 100%;
+							}
+						}
+						img {
+							margin: 0 auto;
+							width: 100%;
+						}
+						p {
+							padding: 0px 10px;
+							height: auto;
 						}
 					}
+					p.date {
+						padding-left: 10px;					
+
+					}
+					p.comments, p.watch {
+						float: none;
+					}
+					
 				}
 				#moreBtn {
 					display: block;
@@ -319,7 +391,7 @@
 			display: block;
 			max-width: 100%;
 			height: 100%;
-			background: url('../images/slider/makron.png') no-repeat left top;
+			background: url('../images/slider/makron.png') no-repeat 20% 50%;
 		}
 		.mobSl {
 			display: block;
@@ -419,8 +491,6 @@
 				display: none;
 			}
 			div:last-of-type {
-				width: 25%;
-				left: 40%;
 				margin: 10px auto 0px;
 			}
 		}
